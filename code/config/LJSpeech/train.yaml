@@ -1,0 +1,20 @@
+path:
+  ckpt_path: "output/ckpt091202-rp/LJSpeech"
+  log_path: "output/log091201-rp/LJSpeech"
+  result_path: "output/result091201-rp/LJSpeech"
+optimizer:
+  batch_size: 16 # changed from 16 for updated, should be 128, just debugging
+  betas: [0.9, 0.98]
+  eps: 0.000000001 # changed from 10^-9
+  weight_decay: 0.0
+  grad_clip_thresh: 1.0
+  grad_acc_step: 1
+  warm_up_step: 2000 # changed from 4000 for updated
+  anneal_steps: [300000, 400000, 500000]
+  anneal_rate: 0.3
+step:
+  total_step: 10000 # changed from 900000
+  log_step: 10
+  synth_step: 1000
+  val_step: 100
+  save_step: 1000
